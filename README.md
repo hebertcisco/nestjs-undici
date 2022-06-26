@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/hebertcisco/nestjs-undici/branch/master/graph/badge.svg?token=E11YWYCJ5Q)](https://codecov.io/gh/hebertcisco/nestjs-undici)
+[![codecov](https://codecov.io/gh/hebertcisco/nestjs-undici/branch/master/graph/badge.svg?token=J79GA9DGDT)](https://codecov.io/gh/hebertcisco/nestjs-undici)
 
 [![Node.js build and publish package](https://github.com/hebertcisco/nestjs-undici/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/hebertcisco/nestjs-undici/actions/workflows/npm-publish.yml)
 
