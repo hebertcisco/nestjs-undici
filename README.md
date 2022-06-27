@@ -23,11 +23,55 @@ yarn add nestjs-undici
 npm i nestjs-undici --save
 ```
 
-### Import the lib with es6 or cjs:
+### Usage example:
 
-```mjs
-// es6
+```ts
+// app.module.ts
+import { Module } from '@nestjs/common';
 import { HttpModule } from 'nestjs-undici';
+import crypto from 'node:crypto';
+
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+
+@Module({
+    imports: [
+        HttpModule.register({
+            headers: {
+                'my-header': `foo-bar`,
+            },
+        }),
+    ],
+    controllers: [AppController],
+    providers: [AppService],
+})
+export class AppModule {}
+
+```
+
+```ts
+// app.service.ts
+import { lastValueFrom } from 'rxjs';
+
+import { Injectable } from '@nestjs/common';
+import { HttpService } from 'nestjs-undici';
+
+@Injectable()
+export class AppService {
+    constructor(private httpService: HttpService) {}
+    public fetchExternalInfo = async () => {
+        const baseURL = 'https://api.github.com';
+        try {
+            const result = this.httpService.request(`${baseURL}/repos/hebertcisco/undici`);
+
+            const response = await lastValueFrom(result);
+
+            return response.body.json();
+        } catch (error) {
+            throw error;
+        }
+    };
+}
 ```
 
 ## 🤝 Contributing
