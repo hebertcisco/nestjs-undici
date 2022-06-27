@@ -13,9 +13,7 @@ export class HttpService {
   constructor(
     @Inject(UNDICI_INSTANCE_TOKEN)
     protected readonly options: UndiciRequestOptionsType,
-  ) {
-    console.log('options', options);
-  }
+  ) {}
 
   public request(
     url: string | URL | UrlObject,
