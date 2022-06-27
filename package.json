@@ -1,6 +1,6 @@
 {
   "name": "nestjs-undici",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "description": "Undici utilities module based on the @nodejs/undici package 🌐",
   "author": "Hebert Cisco",
   "license": "MIT",
