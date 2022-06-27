@@ -25,6 +25,8 @@ npm i nestjs-undici --save
 
 ### Usage example:
 
+> Project example: [https://github.com/hebertcisco/nestjs-techniques-undici](https://github.com/hebertcisco/nestjs-techniques-undici)
+
 ```ts
 // app.module.ts
 import { Module } from '@nestjs/common';
