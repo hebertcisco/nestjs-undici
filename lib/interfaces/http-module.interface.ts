@@ -1,39 +1,20 @@
-import { Provider } from '@nestjs/common';
-
-import { request } from 'undici';
-
+import type { Provider } from '@nestjs/common';
 import type { ModuleMetadata } from '@nestjs/common';
-import type { Dispatcher } from 'undici';
 import type { Type } from '@nestjs/common';
-import type { UrlObject } from 'node:url';
-
-export type UndiciResponseDataType<
-  T = any,
-  D = any,
-> = Promise<Dispatcher.ResponseData>;
-
-export type UndiciRequestOptionsType = {
-  dispatcher?: Dispatcher;
-} & Omit<Dispatcher.RequestOptions, 'origin' | 'path' | 'method'> &
-  Partial<any>;
-
-export type UndiciURLType = string | URL | UrlObject;
-
-export type UndiciRequestArgsType = {
-  url: UndiciURLType;
-  options?: UndiciRequestOptionsType;
-};
-
-export type UndiciRequestType = (
-  args: UndiciRequestArgsType,
-) => UndiciResponseDataType;
-
-export type HttpModuleOptions = UndiciRequestOptionsType;
+import type { HttpModuleOptions } from '../types/http-module.type';
 
 export interface HttpModuleOptionsFactory {
   createHttpOptions(): Promise<HttpModuleOptions> | HttpModuleOptions;
 }
-
+export interface BodyMixin {
+  readonly body?: never; // throws on node v16.6.0
+  readonly bodyUsed: boolean;
+  arrayBuffer(): Promise<ArrayBuffer>;
+  blob(): Promise<Blob>;
+  formData(): Promise<never>;
+  json(): Promise<any>;
+  text(): Promise<string>;
+}
 export interface HttpModuleAsyncOptions
   extends Pick<ModuleMetadata, 'imports'> {
   useExisting?: Type<HttpModuleOptionsFactory>;

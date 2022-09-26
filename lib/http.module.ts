@@ -1,19 +1,19 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { randomStringGenerator } from '@nestjs/common/utils/random-string-generator.util';
 
-import { HttpService } from './http.service';
+import { HttpService } from './services/http.service';
 
 import {
   UNDICI_INSTANCE_TOKEN,
   HTTP_MODULE_ID,
   HTTP_MODULE_OPTIONS,
-} from './http.constants';
+} from './constants/http.constants';
 
 import type {
   HttpModuleAsyncOptions,
-  HttpModuleOptions,
   HttpModuleOptionsFactory,
 } from './interfaces';
+import type { HttpModuleOptions } from './types';
 
 @Module({
   providers: [HttpService],
