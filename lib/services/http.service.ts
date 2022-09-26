@@ -1,19 +1,25 @@
 import { Inject } from '@nestjs/common';
-import { Dispatcher, request } from 'undici';
+import { request } from 'undici';
 
 import { Observable } from 'rxjs';
-
-import { UNDICI_INSTANCE_TOKEN } from './http.constants';
+import Undici from 'undici';
 
 import type { ResponseData } from 'undici/types/dispatcher';
-import type { UndiciRequestOptionsType } from '.';
 import type { UrlObject } from 'node:url';
+import type { Dispatcher } from 'undici';
+
+import { UNDICI_INSTANCE_TOKEN } from '../constants/http.constants';
+
+import type { UndiciRequestOptionsType } from '../types';
 
 export class HttpService {
   constructor(
     @Inject(UNDICI_INSTANCE_TOKEN)
     protected readonly options: UndiciRequestOptionsType,
-  ) {}
+  ) { }
+  public setGlobalDispatcher(dispatcher: Dispatcher): void {
+    this.options.dispatcher = dispatcher;
+  }
 
   public request(
     url: string | URL | UrlObject,

@@ -1,4 +1,10 @@
 export * from './http.module';
-export * from './http.service';
+
 export * from './interfaces';
-export * from './http.constants';
+export * from './interfaces/http-module.interface';
+
+export * from './constants';
+export * from './constants/http.constants';
+
+export * from './services';
+export * from './services/http.service';
