@@ -10,9 +10,7 @@ describe('HttpService', () => {
 
   beforeAll(async (): Promise<void> => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        HttpModule.register({}),
-      ],
+      imports: [HttpModule.register({})],
     }).compile();
 
     service = module.get<HttpService>(HttpService);
@@ -57,7 +55,7 @@ describe('HttpService', () => {
       const result = service.request(baseURL, {
         method: 'GET',
       });
-      result.subscribe(async (response) => {
+      result.subscribe(async response => {
         const json = await response?.body?.json();
         expect(json?.name).toBe('undici');
         expect(json?.version).toBeDefined();
@@ -68,7 +66,7 @@ describe('HttpService', () => {
       const result = service.request(baseURL, {
         method: 'GET',
       });
-      result.subscribe(async (response) => {
+      result.subscribe(async response => {
         const json = await response?.body?.json();
         expect(json?.version).toBeDefined();
         expect(json?.version).toBeTruthy();

@@ -1,10 +1,7 @@
 import type { Dispatcher } from 'undici';
 import type { UrlObject } from 'node:url';
 
-export type UndiciResponseDataType<
-  T = any,
-  D = any,
-> = Promise<Dispatcher.ResponseData>;
+export type UndiciResponseDataType = Promise<Dispatcher.ResponseData>;
 
 export type UndiciRequestOptionsType = {
   dispatcher?: Dispatcher;
