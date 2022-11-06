@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UNDICI_PACKAGE_JSON } from '../../constants/URL';
+import { UNDICI_PACKAGE_JSON } from '../../../constants/URL';
 
-import { HttpService } from '../services/http.service';
-import { HttpModule } from '../http.module';
+import { HttpService } from '../index';
+import { HttpModule } from '../../index';
+import { dispatcherMock } from './mocks/dispatcher.mock';
 
 describe('HttpService', () => {
   let service: HttpService;
@@ -72,6 +73,16 @@ describe('HttpService', () => {
         expect(json?.version).toBeTruthy();
         expect(json?.version).not.toBe('');
       });
+    });
+    describe('request with a dispatcher', () => {
+      it('should return an Observable', () => {
+        const result = service.request(baseURL, {
+          dispatcher: dispatcherMock,
+        });
+        expect(result).toBeTruthy();
+        expect(result).toBeDefined();
+      });
+      it('should return an Observable with a ResponseData', () => { });
     });
   });
 });
