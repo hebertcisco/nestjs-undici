@@ -82,7 +82,13 @@ describe('HttpService', () => {
         expect(result).toBeTruthy();
         expect(result).toBeDefined();
       });
-      it('should return an Observable with a ResponseData', () => { });
+      it('should return an Observable with a ResponseData', () => {
+        const result = service.request(baseURL, {
+          dispatcher: dispatcherMock,
+        });
+        expect(result).toBeTruthy();
+        expect(result).toBeDefined();
+      });
     });
   });
 });

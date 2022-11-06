@@ -2,7 +2,8 @@ import type { HttpModuleOptions } from '../../../types/http-module.type';
 import { HttpModuleOptionsFactory } from '../../../interfaces/http-module.interface';
 
 export class HttpModuleOptionsFactoryImplMock
-  implements HttpModuleOptionsFactory {
+  implements HttpModuleOptionsFactory
+{
   createHttpOptions(): Promise<HttpModuleOptions> | HttpModuleOptions {
     const httpModuleOptions: HttpModuleOptions = {
       headers: {

@@ -21,7 +21,7 @@ describe('http-module.interface', () => {
     it('should be defined', () => {
       expect(httpModuleOptionsFactory).toBeDefined();
     });
-    it('should be defined', () => {
+    it('should be headers defined', () => {
       expect(createHttpOptions.headers).toBeDefined();
     });
   });
