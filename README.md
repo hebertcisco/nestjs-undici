@@ -1,4 +1,4 @@
-
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=hebertcisco_nestjs-undici&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=hebertcisco_nestjs-undici)
 
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=hebertcisco_nestjs-undici&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=hebertcisco_nestjs-undici)
 [![codecov](https://codecov.io/gh/hebertcisco/nestjs-undici/branch/master/graph/badge.svg?token=J79GA9DGDT)](https://codecov.io/gh/hebertcisco/nestjs-undici)
@@ -8,6 +8,7 @@
 [![Node.js build and publish package](https://github.com/hebertcisco/nestjs-undici/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/hebertcisco/nestjs-undici/actions/workflows/npm-publish.yml)
 
 [![Running Code Coverage](https://github.com/hebertcisco/nestjs-undici/actions/workflows/coverage.yml/badge.svg)](https://github.com/hebertcisco/nestjs-undici/actions/workflows/coverage.yml)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hebertcisco_nestjs-undici&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hebertcisco_nestjs-undici)
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Nestjs](https://img.shields.io/badge/Nestjs-ea2845?style=flat&logo=nestjs&logoColor=white)](https://nestjs.com/)
