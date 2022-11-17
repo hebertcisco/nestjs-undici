@@ -45,16 +45,15 @@ export const dispatcherMock: Dispatcher = {
       opaque: opaque,
       trailers: {} as Record<string, string>,
     };
-    void factory;
     return Promise.resolve(streamData);
   },
   upgrade: (
     options: Dispatcher.UpgradeOptions,
   ): Promise<Dispatcher.UpgradeData> => {
-    void options;
     const upgradeData: Dispatcher.UpgradeData = {
       headers: {
         'content-type': 'application/json',
+        ...options.headers[0],
       },
       socket: duplex,
       opaque: null,
@@ -71,84 +70,84 @@ export const dispatcherMock: Dispatcher = {
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   on: (
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   once: (
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   removeListener: (
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   off: (
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   removeAllListeners: (event?: string | symbol): Dispatcher => {
-    void event;
+    event.toString();
     return this;
   },
   setMaxListeners: (n: number): Dispatcher => {
-    void n;
+    n.toString();
     return this;
   },
   getMaxListeners: (): number => {
     return 0;
   },
   listeners: (eventName: string | symbol): any[] => {
-    void eventName;
+    eventName.toString();
     return [this];
   },
   rawListeners: (eventName: string | symbol): any[] => {
-    void eventName;
+    eventName.toString();
     return [this];
   },
   emit: (eventName: string | symbol, ...args: any[]): boolean => {
-    void eventName;
-    void args;
+    eventName.toString();
+    args.toString();
     return true;
   },
   listenerCount: (eventName: string | symbol): number => {
-    void eventName;
+    eventName.toString();
     return 0;
   },
   prependListener: (
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   prependOnceListener: (
     eventName: string | symbol,
     listener: (...args: any[]) => void,
   ): Dispatcher => {
-    void eventName;
-    void listener;
+    eventName.toString();
+    listener.name.toString();
     return this;
   },
   eventNames: (): (string | symbol)[] => {

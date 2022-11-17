@@ -7,7 +7,7 @@ describe('HttpService', () => {
     let service: HttpService;
     let baseURL: string;
 
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
         const module: TestingModule = await Test.createTestingModule({
             imports: [HttpModule.register({})],
         }).compile();
@@ -16,7 +16,7 @@ describe('HttpService', () => {
         baseURL = UNDICI_PACKAGE_JSON.href;
     });
 
-    it('GET', (): void => {
+    it('GET', () => {
         const result = service.request(baseURL, {
             method: 'GET',
         });

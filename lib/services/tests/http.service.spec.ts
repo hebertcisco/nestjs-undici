@@ -28,7 +28,7 @@ describe('HttpService', () => {
     it('should return an Observable with a ResponseData with a statusCode', () => {
       expect(service.request(baseURL)).toBeTruthy();
     });
-    it('should return 200 status', (): void => {
+    it('should return 200 status', () => {
       const result = service.request(baseURL, {
         method: 'GET',
       });
@@ -36,7 +36,7 @@ describe('HttpService', () => {
         expect(response?.statusCode).toBe(200);
       });
     });
-    it('should return 404 status', (): void => {
+    it('should return 404 status', () => {
       const result = service.request(baseURL + 1, {
         method: 'GET',
       });
@@ -44,7 +44,7 @@ describe('HttpService', () => {
         expect(response?.statusCode).toBe(404);
       });
     });
-    it('should return a body', (): void => {
+    it('should return a body', () => {
       const result = service.request(baseURL, {
         method: 'GET',
       });
@@ -52,7 +52,7 @@ describe('HttpService', () => {
         expect(response?.body).toBeTruthy();
       });
     });
-    it('should return a body with a name', (): void => {
+    it('should return a body with a name', () => {
       const result = service.request(baseURL, {
         method: 'GET',
       });
@@ -63,7 +63,7 @@ describe('HttpService', () => {
         expect(json?.version).toBeTruthy();
       });
     });
-    it('should return a body with a version', (): void => {
+    it('should return a body with a version', () => {
       const result = service.request(baseURL, {
         method: 'GET',
       });
