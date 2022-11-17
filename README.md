@@ -1,4 +1,9 @@
+
+
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=hebertcisco_nestjs-undici&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=hebertcisco_nestjs-undici)
 [![codecov](https://codecov.io/gh/hebertcisco/nestjs-undici/branch/master/graph/badge.svg?token=J79GA9DGDT)](https://codecov.io/gh/hebertcisco/nestjs-undici)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=hebertcisco_nestjs-undici&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=hebertcisco_nestjs-undici) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=hebertcisco_nestjs-undici&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=hebertcisco_nestjs-undici)
 
 [![Node.js build and publish package](https://github.com/hebertcisco/nestjs-undici/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/hebertcisco/nestjs-undici/actions/workflows/npm-publish.yml)
 
