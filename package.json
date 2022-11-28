@@ -33,7 +33,7 @@
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-angular": "17.1.0",
     "@nestjs/common": "9.1.2",
-    "@nestjs/core": "9.1.2",
+    "@nestjs/core": "9.2.0",
     "@nestjs/platform-express": "9.1.2",
     "@nestjs/testing": "^9.1.2",
     "@types/jest": "29.0.3",
