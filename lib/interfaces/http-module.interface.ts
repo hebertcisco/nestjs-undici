@@ -1,6 +1,4 @@
-import type { Provider } from '@nestjs/common';
-import type { ModuleMetadata } from '@nestjs/common';
-import type { Type } from '@nestjs/common';
+import type { Provider, ModuleMetadata, Type } from '@nestjs/common';
 import type { HttpModuleOptions } from '../types/http-module.type';
 
 export interface HttpModuleOptionsFactory {
