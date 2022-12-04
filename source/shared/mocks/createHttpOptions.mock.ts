@@ -1,5 +1,5 @@
-import type { HttpModuleOptions } from '../../../types/http-module.type';
-import { HttpModuleOptionsFactory } from '../../../interfaces/http-module.interface';
+import type { HttpModuleOptions } from '../../modules/http/types/http-module.type';
+import { HttpModuleOptionsFactory } from '../../modules/http/interfaces/http-module.interface';
 
 export class HttpModuleOptionsFactoryImplMock
   implements HttpModuleOptionsFactory

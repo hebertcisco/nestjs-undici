@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UNDICI_PACKAGE_JSON } from '../../../constants/URL';
+import { UNDICI_PACKAGE_JSON } from '../../../../shared/constants/URL';
 
 import { HttpService } from '../index';
-import { HttpModule } from '../../index';
-import { dispatcherMock } from './mocks/dispatcher.mock';
+import { HttpModule } from '../../../../index';
+import { dispatcherMock } from '../../../../shared/mocks/dispatcher.mock';
 
 describe('HttpService', () => {
   let service: HttpService;

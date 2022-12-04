@@ -6,7 +6,8 @@ import {
   HttpModuleOptionsFactory,
 } from '../http-module.interface';
 
-import { HttpModuleOptionsFactoryImplMock } from './mocks/createHttpOptions.mock';
+import { HttpModuleOptionsFactoryImplMock } from '../../../../shared/mocks/createHttpOptions.mock';
+
 import type { HttpModuleOptions } from '../../types';
 
 describe('http-module.interface', () => {
