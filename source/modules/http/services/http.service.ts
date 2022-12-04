@@ -3,16 +3,14 @@ import { request } from 'undici';
 
 import { Observable } from 'rxjs';
 
-import type { ResponseData } from 'undici/types/dispatcher';
-import type { UrlObject } from 'node:url';
-import type { Dispatcher } from 'undici';
-
 import { UNDICI_INSTANCE_TOKEN } from '../constants/http.constants';
 
+import type { UrlObject } from 'node:url';
+import type { Dispatcher } from 'undici';
 import type { UndiciRequestOptionsType } from '../types';
 
 export class HttpService {
-  constructor(
+  public constructor(
     @Inject(UNDICI_INSTANCE_TOKEN)
     protected readonly options: UndiciRequestOptionsType,
   ) {}
@@ -27,8 +25,8 @@ export class HttpService {
       'origin' | 'path' | 'method'
     > &
       Partial<Pick<Dispatcher.RequestOptions, 'method'>>,
-  ): Observable<ResponseData> {
-    return new Observable<ResponseData>(subscriber => {
+  ): Observable<Dispatcher.ResponseData> {
+    return new Observable<Dispatcher.ResponseData>(subscriber => {
       const response = request(url, {
         ...this.options,
         ...options,

@@ -1,4 +1,3 @@
-import type { BodyMixin } from 'undici';
 import BodyReadable from 'undici/types/readable';
 
 export const bodyMock = {
@@ -12,4 +11,4 @@ export const bodyMock = {
     }),
   text: () => Promise.resolve('test'),
   body: new BodyReadable(),
-} as BodyReadable & BodyMixin;
+} as any;
