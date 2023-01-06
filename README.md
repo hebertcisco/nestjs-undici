@@ -128,7 +128,3 @@ export class AppComponent {
   }
 }
 ```
-
-### Setting the global dispatcher
-
-The `HttpModule` uses the `dispatcher` option of the `request()` method to specify the [Dispatcher](https://github.com/nodejs/undici#dispatcher) that should be used to make the request. By default, the `HttpModule` uses the `createDispatcher()` function from the `@nodejs/undici` package to create
