@@ -75,7 +75,7 @@ For example, here is how you could use the `HttpService` to make a GET request t
 ```ts
 import { of } from 'rxjs';
 
-export class AppComponent {
+export class AppService {
   constructor(private httpService: HttpService) {}
 
   public getUsers(): void {
@@ -110,7 +110,7 @@ Here is an example of how you could use the options object to set the HTTP metho
 ```ts
 import { of } from 'rxjs';
 
-export class AppComponent {
+export class AppService {
   constructor(private httpService: HttpService) {}
 
   public createUser(user: User): void {
@@ -128,7 +128,3 @@ export class AppComponent {
   }
 }
 ```
-
-### Setting the global dispatcher
-
-The `HttpModule` uses the `dispatcher` option of the `request()` method to specify the [Dispatcher](https://github.com/nodejs/undici#dispatcher) that should be used to make the request. By default, the `HttpModule` uses the `createDispatcher()` function from the `@nodejs/undici` package to create
