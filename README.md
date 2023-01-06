@@ -26,13 +26,13 @@ npm i nestjs-undici --save
 
 To use nestjs-undici in your NestJS application, you will need to import it. You can do this by adding the following line to the top of the file where you want to use the module:
 
-```ts
+```js
 import { HttpModule } from 'nestjs-undici';
 ```
 
 You will also need to include the HttpModule in the imports array of the root AppModule or the module where you want to use it.
 
-```ts
+```js
 // app.module.ts
 
 import { Module } from '@nestjs/common';
@@ -60,7 +60,7 @@ export class AppModule {}
 
 To use the nestjs-undici module, you will need to inject the `HttpService` into your component or controller. You can do this by adding it to the constructor arguments and adding a public or private property for it:
 
-```ts
+```js
 import { HttpService } from 'nestjs-undici';
 
 export class AppComponent {
@@ -72,7 +72,7 @@ Once you have injected the `HttpService`, you can use it to make HTTP requests u
 
 For example, here is how you could use the `HttpService` to make a GET request to the `/users` endpoint:
 
-```ts
+```js
 import { of } from 'rxjs';
 
 export class AppService {
@@ -107,7 +107,7 @@ The `request()` method also accepts an options object as its second argument. Th
 
 Here is an example of how you could use the options object to set the HTTP method to `POST` and add a JSON payload to the request body:
 
-```ts
+```js
 import { of } from 'rxjs';
 
 export class AppService {
