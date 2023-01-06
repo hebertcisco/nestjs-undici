@@ -52,6 +52,7 @@
     "eslint-plugin-jest": "^27.1.6",
     "husky": "8.0.2",
     "jest": "29.3.1",
+    "komit": "^1.0.5",
     "lint-staged": "13.0.4",
     "prettier": "2.8.0",
     "reflect-metadata": "0.1.13",
@@ -119,7 +120,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "komit $HUSKY_GIT_PARAMS"
     }
   },
   "repository": {
