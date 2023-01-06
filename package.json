@@ -2,11 +2,16 @@
   "name": "nestjs-undici",
   "version": "0.0.45",
   "description": "Undici utilities module based on the @nodejs/undici package 🌐",
-  "author": "Hebert Cisco",
-  "license": "MIT",
-  "url": "https://github.com/hebertcisco/nestjs-undici#readme",
+  "homepage": "https://hebertcisco.github.io/nestjs-undici",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">=16.16",
+    "npm": ">=8.11"
+  },
   "scripts": {
-    "build": "rimraf -rf dist && tsc -p tsconfig.json",
+    "serve:website": "docsify serve .",
+    "build": "rimraf -rf lib && tsc -p tsconfig.json",
     "format": "prettier --write \"{source,test}/**/*.ts\"",
     "lint": "eslint source --ext .js,.ts",
     "prepublish:npm": "npm run build",
@@ -40,6 +45,7 @@
     "@types/node": "18.11.10",
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.0",
+    "docsify": "^4.13.0",
     "eslint": "8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "2.26.0",
@@ -60,6 +66,51 @@
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0 || ^7.0.0"
   },
+  "contributors": [
+    {
+      "name": "Hebert Cisco <hebertcisco@outlook.com>",
+      "url": "https://github.com/hebertcisco",
+      "author": true
+    },
+    {
+      "name": "binsee",
+      "url": "https://github.com/binsee",
+      "author": false
+    },
+    {
+      "name": "favelado-web <faveladoweb@gmail.com>",
+      "url": "https://github.com/favelado-web",
+      "author": false
+    }
+  ],
+  "files": [
+    "*.d.ts",
+    "index.js",
+    "lib",
+    "docs"
+  ],
+  "keywords": [
+    "fetch",
+    "http",
+    "https",
+    "promise",
+    "request",
+    "curl",
+    "wget",
+    "xhr",
+    "whatwg"
+  ],
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": [
+      "source/shared/mocks"
+    ]
+  },
+  "author": "Hebert Cisco <hebertcisco@outlook.com>",
+  "license": "MIT",
+  "url": "https://github.com/hebertcisco/nestjs-undici#readme",
   "lint-staged": {
     "*.ts": [
       "prettier --write"
@@ -74,5 +125,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hebertcisco/nestjs-undici"
+  },
+  "bugs": {
+    "url": "https://github.com/hebertcisco/nestjs-undici/issues"
   }
 }

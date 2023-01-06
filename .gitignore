@@ -15,8 +15,8 @@ npm-debug.log
 /coverage
 /.nyc_output
 
-# dist
-dist
+# lib
+lib
 
 # enviroment
 .env
