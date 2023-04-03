@@ -57,7 +57,7 @@
     "prettier": "2.8.7",
     "reflect-metadata": "0.1.13",
     "release-it": "^15.5.1",
-    "rimraf": "4.4.0",
+    "rimraf": "4.4.1",
     "rxjs": "7.6.0",
     "ts-jest": "29.0.5",
     "typescript": "5.0.2"
