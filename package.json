@@ -35,7 +35,7 @@
     "undici": "^5.13.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.5.1",
+    "@commitlint/cli": "17.6.3",
     "@commitlint/config-angular": "17.6.1",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.3.12",
