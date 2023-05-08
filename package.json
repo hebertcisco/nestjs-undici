@@ -42,7 +42,7 @@
     "@nestjs/platform-express": "9.4.0",
     "@nestjs/testing": "^9.2.1",
     "@types/jest": "29.5.0",
-    "@types/node": "18.16.3",
+    "@types/node": "20.1.0",
     "@typescript-eslint/eslint-plugin": "5.59.2",
     "@typescript-eslint/parser": "5.59.0",
     "docsify": "^4.13.0",
