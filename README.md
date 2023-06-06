@@ -2,6 +2,8 @@
 
 [**nestjs-undici**](/) is a **NestJS** module that provides utility functions for working with the [@nodejs/undici](https://github.com/nodejs/undici) package. **Undici** is a lightweight *HTTP/1.1* client for Node.js, designed to be used with the **NestJs** *environment*.
 
+[![Running Code Coverage](https://github.com/hebertcisco/nestjs-undici/actions/workflows/coverage.yml/badge.svg)](https://github.com/hebertcisco/nestjs-undici/actions/workflows/coverage.yml)
+
 ## Installation
 
 To install [nestjs-undici](https://www.npmjs.com/package/nestjs-undici), you will need to have [Node.js](https://nodejs.org/en/download/) and npm (or [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)) installed on your system. Then, you can run the following command to install the module:
