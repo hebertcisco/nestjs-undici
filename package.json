@@ -6,8 +6,8 @@
   "main": "index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": ">=16.16",
-    "npm": ">=8.11"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "scripts": {
     "serve:website": "docsify serve .",
