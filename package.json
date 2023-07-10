@@ -40,7 +40,7 @@
     "@nestjs/testing": "^9.2.1",
     "@types/jest": "29.5.0",
     "@types/node": "20.3.3",
-    "@typescript-eslint/eslint-plugin": "5.60.1",
+    "@typescript-eslint/eslint-plugin": "6.0.0",
     "@typescript-eslint/parser": "5.61.0",
     "docsify": "^4.13.0",
     "eslint": "8.44.0",
