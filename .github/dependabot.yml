@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     assignees:
-      - "hebertcisco"
+      - "dependabot"
     target-branch: "develop"
     commit-message:
       prefix: "chore"
@@ -17,7 +17,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     assignees:
-      - "hebertcisco"
+      - "dependabot"
     target-branch: "develop"
     commit-message:
       prefix: "chore"
@@ -25,7 +25,7 @@ updates:
       labels:
         - "dependencies"
     schedule:
-      interval: "daily"
+      interval: "monthly"
       time: "04:00"
       timezone: "America/Sao_Paulo"
     open-pull-requests-limit: 10
