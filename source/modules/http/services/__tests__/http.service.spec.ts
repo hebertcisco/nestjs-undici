@@ -5,6 +5,11 @@ import { HttpService } from '../index';
 import { HttpModule } from '../../../../index';
 import { dispatcherMock } from '../../../../shared/mocks/dispatcher.mock';
 
+type ExampleResponse = {
+  name: string;
+  version?: string;
+};
+
 describe('HttpService', () => {
   let service: HttpService;
   let baseURL: string;
@@ -57,7 +62,7 @@ describe('HttpService', () => {
         method: 'GET',
       });
       result.subscribe(async response => {
-        const json = await response?.body?.json();
+        const json = (await response?.body?.json()) as ExampleResponse;
         expect(json?.name).toBe('undici');
         expect(json?.version).toBeDefined();
         expect(json?.version).toBeTruthy();
@@ -68,7 +73,7 @@ describe('HttpService', () => {
         method: 'GET',
       });
       result.subscribe(async response => {
-        const json = await response?.body?.json();
+        const json = (await response?.body?.json()) as ExampleResponse;
         expect(json?.version).toBeDefined();
         expect(json?.version).toBeTruthy();
         expect(json?.version).not.toBe('');
