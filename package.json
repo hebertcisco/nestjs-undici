@@ -1,6 +1,6 @@
 {
   "name": "nestjs-undici",
-  "version": "0.1.50",
+  "version": "0.1.52",
   "description": "Undici utilities module based on the @nodejs/undici package 🌐",
   "homepage": "https://hebertcisco.github.io/nestjs-undici",
   "main": "index.js",
@@ -42,7 +42,7 @@
     "@types/node": "20.4.5",
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.62.0",
-    "docsify": "^4.13.0",
+    "docsify": "^4.11.4",
     "eslint": "8.46.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "2.28.0",
