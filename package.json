@@ -12,8 +12,8 @@
   "scripts": {
     "serve:website": "docsify serve .",
     "build": "rimraf -rf lib && tsc -p tsconfig.json",
-    "format": "prettier --write \"{source,test}/**/*.ts\"",
-    "lint": "eslint source --ext .js,.ts",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "eslint src --ext .js,.ts",
     "prepublish:npm": "npm run build",
     "publish:npm": "npm publish --access public",
     "prepublish:next": "npm run build",
@@ -24,7 +24,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
-    "version": "npm run format && git add -A source",
+    "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -109,7 +109,7 @@
       "jest"
     ],
     "ignore": [
-      "source/shared/mocks"
+      "src/shared/mocks"
     ]
   },
   "author": "Hebert Cisco",

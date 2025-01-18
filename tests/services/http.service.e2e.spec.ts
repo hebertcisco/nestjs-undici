@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UNDICI_PACKAGE_JSON } from '../../source/shared/constants/URL';
-import { HttpModule, HttpService } from '../../source';
+import { UNDICI_PACKAGE_JSON } from '../../src/shared/constants/URL';
+import { HttpModule, HttpService } from '../../src';
 
 describe('HttpService', () => {
     let service: HttpService;
