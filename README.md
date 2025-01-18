@@ -26,13 +26,13 @@ npm i nestjs-undici --save
 
 To use nestjs-undici in your NestJS application, you will need to import it. You can do this by adding the following line to the top of the file where you want to use the module:
 
-```js
+```ts
 import { HttpModule } from 'nestjs-undici';
 ```
 
 You will also need to include the HttpModule in the imports array of the root AppModule or the module where you want to use it.
 
-```js
+```ts
 // app.module.ts
 
 import { Module } from '@nestjs/common';
@@ -41,17 +41,17 @@ import { HttpModule } from 'nestjs-undici';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-  
+
 @Module({
-    imports: [
-        HttpModule.register({
-            headers: {
-                'my-header': `foo-bar`,
-            },
-        }),
-    ],
-    controllers: [AppController],
-    providers: [AppService],
+  imports: [
+    HttpModule.register({
+      headers: {
+        'my-header': `foo-bar`,
+      },
+    }),
+  ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
 ```
@@ -60,7 +60,7 @@ export class AppModule {}
 
 To use the nestjs-undici module, you will need to inject the `HttpService` into your component or controller. You can do this by adding it to the constructor arguments and adding a public or private property for it:
 
-```js
+```ts
 import { HttpService } from 'nestjs-undici';
 
 export class AppComponent {
@@ -72,7 +72,7 @@ Once you have injected the `HttpService`, you can use it to make HTTP requests u
 
 For example, here is how you could use the `HttpService` to make a GET request to the `/users` endpoint:
 
-```js
+```ts
 import { of } from 'rxjs';
 
 export class AppService {
@@ -82,15 +82,17 @@ export class AppService {
     this.httpService
       .request
       .get('/users')
-      .subscribe(response => { // Handle the response here }); 
-}}
+      .subscribe(response => {
+        // Handle the response here
+      });
+  }}
 ```
 
 > You can also use the `post`, `put`, `patch`, `delete`, and `head` methods to send other types of HTTP requests.
 
 ## Configuration
 
-The nestjs-undici module supports configuration options through the `register` method. You can pass an options object to the `register` method to configure the Undici client. The available options are the same as the options for the [@nodejs/undici](https://github.com/nodejs/undici) client.
+The `nestjs-undici` module supports configuration options through the `register` method. You can pass an options object to the `register` method to configure the Undici client. The available options are the same as the options for the [@nodejs/undici](https://github.com/nodejs/undici) client.
 
 You can also use the `registerAsync` method to provide the options asynchronously, for example, from a configuration file. The `registerAsync` method accepts an object with the following properties:
 
@@ -107,7 +109,7 @@ The `request()` method also accepts an options object as its second argument. Th
 
 Here is an example of how you could use the options object to set the HTTP method to `POST` and add a JSON payload to the request body:
 
-```js
+```ts
 import { of } from 'rxjs';
 
 export class AppService {
