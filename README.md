@@ -1,132 +1,157 @@
-# nestjs-undici
+# NestJS Undici
 
-[**nestjs-undici**](/) is a **NestJS** module that provides utility functions for working with the [@nodejs/undici](https://github.com/nodejs/undici) package. **Undici** is a lightweight *HTTP/1.1* client for Node.js, designed to be used with the **NestJs** *environment*.
-
+[![npm version](https://badge.fury.io/js/nestjs-undici.svg)](https://badge.fury.io/js/nestjs-undici)
 [![Running Code Coverage](https://github.com/hebertcisco/nestjs-undici/actions/workflows/coverage.yml/badge.svg)](https://github.com/hebertcisco/nestjs-undici/actions/workflows/coverage.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**NestJS Undici** is a powerful HTTP client module for NestJS applications, built on top of [@nodejs/undici](https://github.com/nodejs/undici). It provides a simple and efficient way to make HTTP requests in your NestJS applications.
+
+## Features
+
+- 🚀 Built on top of [@nodejs/undici](https://github.com/nodejs/undici)
+- 🔄 Full TypeScript support
+- ⚡ High-performance HTTP client
+- 🔒 Secure by default
+- 🛠️ Easy to configure and use
+- 📦 Lightweight and dependency-free
+- 🔍 Built-in request/response interceptors
+- 🔄 Automatic retry mechanism
+- 📝 Comprehensive documentation
 
 ## Installation
 
-To install [nestjs-undici](https://www.npmjs.com/package/nestjs-undici), you will need to have [Node.js](https://nodejs.org/en/download/) and npm (or [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)) installed on your system. Then, you can run the following command to install the module:
-
-> Install with yarn or npm: `yarn` or `npm`:
-
 ```bash
-# yarn
+# Using npm
+npm install nestjs-undici
+
+# Using yarn
 yarn add nestjs-undici
 ```
 
-Or NPM:
+## Quick Start
 
-```bash
-# npm
-npm i nestjs-undici --save
-```
+1. Import the `HttpModule` in your root module:
 
-#### Importing the module
-
-To use nestjs-undici in your NestJS application, you will need to import it. You can do this by adding the following line to the top of the file where you want to use the module:
-
-```ts
-import { HttpModule } from 'nestjs-undici';
-```
-
-You will also need to include the HttpModule in the imports array of the root AppModule or the module where you want to use it.
-
-```ts
-// app.module.ts
-
+```typescript
 import { Module } from '@nestjs/common';
 import { HttpModule } from 'nestjs-undici';
-
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 
 @Module({
   imports: [
     HttpModule.register({
+      // Optional configuration
       headers: {
-        'my-header': `foo-bar`,
+        'Content-Type': 'application/json',
       },
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
 ```
 
-#### Using the module
+2. Inject and use the `HttpService` in your service:
 
-To use the nestjs-undici module, you will need to inject the `HttpService` into your component or controller. You can do this by adding it to the constructor arguments and adding a public or private property for it:
-
-```ts
+```typescript
+import { Injectable } from '@nestjs/common';
 import { HttpService } from 'nestjs-undici';
 
-export class AppComponent {
-  constructor(private httpService: HttpService) {}
-}
-```
-
-Once you have injected the `HttpService`, you can use it to make HTTP requests using the `request()` method. The `request()` method takes a URL and an options object as arguments, and returns an [RxJS Observable](https://rxjs.dev/api/index/class/Observable) that you can subscribe to in order to handle the response.
-
-For example, here is how you could use the `HttpService` to make a GET request to the `/users` endpoint:
-
-```ts
-import { of } from 'rxjs';
-
+@Injectable()
 export class AppService {
-  constructor(private httpService: HttpService) {}
+  constructor(private readonly httpService: HttpService) {}
 
-  public getUsers(): void {
-    this.httpService
-      .request
-      .get('/users')
-      .subscribe(response => {
-        // Handle the response here
-      });
-  }}
-```
-
-> You can also use the `post`, `put`, `patch`, `delete`, and `head` methods to send other types of HTTP requests.
-
-## Configuration
-
-The `nestjs-undici` module supports configuration options through the `register` method. You can pass an options object to the `register` method to configure the Undici client. The available options are the same as the options for the [@nodejs/undici](https://github.com/nodejs/undici) client.
-
-You can also use the `registerAsync` method to provide the options asynchronously, for example, from a configuration file. The `registerAsync` method accepts an object with the following properties:
-
-- `useClass`: a provider that returns the options object
-- `useExisting`: a provider that returns the options object
-- `useFactory`: a factory function that returns the options object
-- `inject`: an array of providers to inject into the factory function
-- `imports`: an array of modules to import
-- `extraProviders`: an array of additional providers to add to the module
-
-### Customizing the request options
-
-The `request()` method also accepts an options object as its second argument. This options object can be used to customize the request, such as setting the HTTP method, adding headers, or setting the body of the request.
-
-Here is an example of how you could use the options object to set the HTTP method to `POST` and add a JSON payload to the request body:
-
-```ts
-import { of } from 'rxjs';
-
-export class AppService {
-  constructor(private httpService: HttpService) {}
-
-  public createUser(user: User): void {
-    this.httpService
-      .request('/users', {
-        method: 'POST',
-        body: JSON.stringify(user),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .subscribe(response => {
-        // Handle the response here
-      });
+  async getUsers() {
+    const response = await this.httpService
+      .request('https://api.example.com/users')
+      .toPromise();
+    
+    return response.data;
   }
 }
 ```
+
+## Configuration
+
+The `HttpModule` can be configured using the `register` or `registerAsync` methods:
+
+### Synchronous Configuration
+
+```typescript
+HttpModule.register({
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  timeout: 5000,
+  retry: {
+    attempts: 3,
+    delay: 1000,
+  },
+});
+```
+
+### Asynchronous Configuration
+
+```typescript
+HttpModule.registerAsync({
+  useFactory: async (configService: ConfigService) => ({
+    headers: {
+      'Authorization': await configService.get('API_KEY'),
+    },
+  }),
+  inject: [ConfigService],
+});
+```
+
+## Advanced Usage
+
+### Making HTTP Requests
+
+```typescript
+// GET request
+const response = await this.httpService
+  .request('https://api.example.com/users')
+  .toPromise();
+
+// POST request
+const response = await this.httpService
+  .request('https://api.example.com/users', {
+    method: 'POST',
+    body: JSON.stringify({ name: 'John Doe' }),
+  })
+  .toPromise();
+```
+
+### Using Interceptors
+
+```typescript
+import { Injectable } from '@nestjs/common';
+import { HttpService, HttpInterceptor } from 'nestjs-undici';
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  intercept(request: Request) {
+    request.headers.set('Authorization', 'Bearer token');
+    return request;
+  }
+}
+
+// Register the interceptor
+HttpModule.register({
+  interceptors: [AuthInterceptor],
+});
+```
+
+## API Reference
+
+For detailed API documentation, please visit our [documentation site](https://hebertcisco.github.io/nestjs-undici/).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you find this package useful, please consider giving it a ⭐️ on [GitHub](https://github.com/hebertcisco/nestjs-undici).

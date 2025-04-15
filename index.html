@@ -1,53 +1,59 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>NestJs Undici</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta
-      name="description"
-      content="Undici utilities module based on the @nodejs undici package 🌐"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg"
-    />
-  </head>
 
-  <body>
-    <div id="app"></div>
-    <script>
-      window.$docsify = {
-        name: 'NestJs Undici',
-        repo: 'https://github.com/hebertcisco/nestjs-undici',
-        loadSidebar: 'docsify/sidebar.md',
-        auto2top: true,
-        subMaxLevel: 3,
-        maxLevel: 3,
-        themeColor: '#ea2845',
-        noCompileLinks: ['benchmarks/.*'],
-        relativePath: true,
-      };
-    </script>
-    <!-- Docsify v4 -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/docsify.min.js"
-      integrity="sha256-ycM1gQUpS76Yjdc8fQA5WlyWGQ7YtDR68v+cbMEhdLY="
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>NestJS Undici - HTTP Client Module for NestJS</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description"
+    content="NestJS Undici - A powerful HTTP client module for NestJS based on @nodejs/undici. Provides utility functions for making HTTP requests in your NestJS applications." />
+  <meta name="keywords" content="nestjs, undici, http client, nodejs, typescript, api, rest, http" />
+  <meta name="author" content="Hebert Cisco" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta property="og:title" content="NestJS Undici - HTTP Client Module for NestJS" />
+  <meta property="og:description" content="A powerful HTTP client module for NestJS based on @nodejs/undici" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://github.com/hebertcisco/nestjs-undici" />
+  <meta property="og:image"
+    content="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+  <link rel="icon" type="image/png"
+    href="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg" />
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'NestJS Undici',
+      repo: 'https://github.com/hebertcisco/nestjs-undici',
+      loadSidebar: 'docsify/sidebar.md',
+      auto2top: true,
+      subMaxLevel: 3,
+      maxLevel: 3,
+      themeColor: '#ea2845',
+      noCompileLinks: ['benchmarks/.*'],
+      relativePath: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Search documentation...',
+        noData: 'No results found!',
+        depth: 3
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (content) {
+            return content + '\n\n---\n\nLast updated: {docsify-updated}';
+          });
+        }
+      ]
+    };
+  </script>
+  <!-- Docsify v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+</body>
+
 </html>
