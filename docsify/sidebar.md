@@ -2,8 +2,6 @@
 
 * Getting Started
   * [Introduction](/)
-  * [Installation](/installation)
-  * [Quick Start](/quick-start)
 
 * Guides
   * [Configuration](/guides/configuration)
@@ -11,7 +9,7 @@
   * [Interceptors](/guides/interceptors)
   * [Error Handling](/guides/error-handling)
   * [Testing](/guides/testing)
-
+<!---
 * API Reference
   * [HttpModule](/api-reference/http-module)
   * [HttpService](/api-reference/http-service)
@@ -29,7 +27,7 @@
   * [Authentication](/examples/authentication)
   * [File Upload](/examples/file-upload)
   * [Error Handling](/examples/error-handling)
-
+-->
 * Contributing
   * [Development Setup](/contributing/development-setup)
   * [Code Style](/contributing/code-style)
