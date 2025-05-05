@@ -4,6 +4,7 @@ import type { Dispatcher } from 'undici';
 const duplex = new stream.Duplex();
 
 export const dispatcherMock: Dispatcher = {
+  compose: () => dispatcherMock,
   dispatch: () => true,
   pipeline: () => duplex,
   connect: (

@@ -10,5 +10,12 @@ export const bodyMock = {
       test: 'test',
     }),
   text: () => Promise.resolve('test'),
-  body: new BodyReadable(),
+  body: new BodyReadable({
+    resume() {
+      return;
+    },
+    abort() {
+      return;
+    },
+  }),
 } as any;
