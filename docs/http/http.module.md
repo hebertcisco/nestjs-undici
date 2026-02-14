@@ -1,16 +1,36 @@
-## Configuration
+# HttpModule
 
-The nestjs-undici module supports configuration options through the `register` method. You can pass an options object to the `register` method to configure the Undici client. The available options are the same as the options for the [@nodejs/undici](https://github.com/nodejs/undici) client.
+The `HttpModule` is the main entry point for the `nestjs-undici` package.
 
-You can also use the `registerAsync` method to provide the options asynchronously, for example, from a configuration file. The `registerAsync` method accepts an object with the following properties:
+## Static Methods
 
-- `useClass`: a provider that returns the options object
-- `useExisting`: a provider that returns the options object
-- `useFactory`: a factory function that returns the options object
-- `inject`: an array of providers to inject into the factory function
-- `imports`: an array of modules to import
-- `extraProviders`: an array of additional providers to add to the module
+### `register(options: HttpModuleOptions): DynamicModule`
 
-### Setting the global dispatcher
+Registers the module synchronously.
 
-The `HttpModule` uses the `dispatcher` option of the `request()` method to specify the [Dispatcher](https://github.com/nodejs/undici#dispatcher) that should be used to make the request. By default, the `HttpModule` uses the `createDispatcher()` function from the `@nodejs/undici` package to create
+- **options**: An object implementing `HttpModuleOptions` (which extends `UndiciRequestOptions`).
+
+### `registerAsync(options: HttpModuleAsyncOptions): DynamicModule`
+
+Registers the module asynchronously.
+
+- **options**: An object implementing `HttpModuleAsyncOptions`.
+
+## HttpModuleOptions
+
+The configuration object extends [Undici Request Options](https://github.com/nodejs/undici#undicirequesturl-options-promise) and includes:
+
+- `dispatcher`: Optional [Dispatcher](https://github.com/nodejs/undici#dispatcher) instance.
+- `headers`: Default headers.
+- `method`: Default method.
+- ...and other `undici.request` options.
+
+## HttpModuleAsyncOptions
+
+Standard NestJS async module options:
+
+- `useFactory`: Factory function to return options.
+- `useClass`: Class to provide options.
+- `useExisting`: Existing provider to use.
+- `inject`: Dependencies to inject into factory.
+- `imports`: Modules to import.

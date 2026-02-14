@@ -27,6 +27,7 @@ export const dispatcherMock: Dispatcher = {
     const { opaque } = options;
     const responseData: Dispatcher.ResponseData = {
       statusCode: 200,
+      statusText: 'OK',
       headers: {
         'content-type': 'application/json',
       },
