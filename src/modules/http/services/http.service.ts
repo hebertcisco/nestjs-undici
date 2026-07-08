@@ -31,15 +31,14 @@ export class HttpService {
         ...this.options,
         ...options,
       });
-      response.then(res => {
-        subscriber.next(res);
-        subscriber.complete();
-        return () => {
-          if (!res.statusCode) {
-            return;
-          }
-        };
-      });
+      response
+        .then(res => {
+          subscriber.next(res);
+          subscriber.complete();
+        })
+        .catch(error => {
+          subscriber.error(error);
+        });
     });
   }
 
